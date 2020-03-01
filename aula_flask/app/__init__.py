@@ -8,7 +8,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Configurando banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///storage.db"
+app.config.from_object('config')
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
