@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="col-md-4 col-offset-md-4">
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <label>Username</label>
+        {{ form.username(_class="form-control", placeholder="Seu usuário") }}
+        {% if form.errors.username %}
+            <div class="alert alert-danger" role="alert">
+                {{ form.errors.username }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        {{ form.password(_class="form-control") }}
+        {% if form.errors.password %}
+            <div class="alert alert-danger" role="alert">
+                {{ form.errors.password }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="checkbox">
+        <label>
+            {{ form.remember_me }} Remember me
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+{% endblock %}
