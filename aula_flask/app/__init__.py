@@ -16,4 +16,5 @@ migrate = Migrate(app, db)
 manager = Manager(app)  # Possibilita usar comando no terminal
 manager.add_command('db', MigrateCommand)  # Adiciona comando 'db' e o que ele faz
 
+from app.models import tables, forms
 from app.controllers import default

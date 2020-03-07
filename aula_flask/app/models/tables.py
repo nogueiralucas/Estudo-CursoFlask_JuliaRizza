@@ -46,5 +46,5 @@ class Follow(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     follower_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    user = db.relationship('User', foreign_keys='user_id')
-    follower = db.relationship('User', foreign_keys='follower_id')
+    user = db.relationship('User', foreign_keys=user_id)
+    follower = db.relationship('User', foreign_keys=follower_id)
